@@ -23,6 +23,16 @@
                 "isHidden": true
             }
         },
+        "actionEventListener2": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "addContent",
+                "handler": {"@": "tasksController"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
         "addTaskButton": {
             "prototype": "digit/ui/button.reel",
             "properties": {
@@ -65,6 +75,20 @@
                 }
             ]
         },
+        "newTaskButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "newTaskButton"},
+                "enabled": true,
+                "label": "newTaskButton"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "actionEventListener2"}
+                }
+            ]
+        },
         "taskCell": {
             "prototype": "ui/task-cell.reel",
             "properties": {
@@ -103,7 +127,10 @@
         <output data-montage-id="badge">
 
         </output>
-        <button data-montage-id="clearCompletedButton"></button>
+        <button data-montage-id="clearCompletedButton">
+
+        </button>
+        <button data-montage-id="newTaskButton"></button>
         <ul data-montage-id="taskList">
             <li data-montage-id="taskCell">
                 Item
